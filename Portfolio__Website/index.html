@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en" style="scroll-behavior: smooth;">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Matthew McAfee</title>
+    <link rel="stylesheet" href="main.css">
+    <script src="https://kit.fontawesome.com/a1308a65c6.js" crossorigin="anonymous"></script>
+    <script type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js">
+</script>
+<script src="index.js"></script>
+<script type="text/javascript">
+   (function(){
+      emailjs.init("l_Xq_kEPs1w5NT_Sr");
+   })();
+</script>
+</head>
+ <!-- End of head-->
+ <!-- Start of nav section -->
+<body>
+    <section id="landing">
+        <nav>
+            <figure>
+                <img id="personal-logo" src="./assets/Logo.png">
+            </figure>
+            <ul class="nav__link--list">
+                <li class="nav__link" onclick="toggleModal()">
+                    <a href="#" class="
+                    nav__link--anchor 
+                    link__hover-effect 
+                    link__hover-effect-grey">About</a>
+                </li>
+                <li class="nav__link">
+                    <a href="#projects" class="
+                    nav__link--anchor 
+                    link__hover-effect 
+                    link__hover-effect-grey">Projects</a>
+                </li>
+                <li class="nav__link" onclick="toggleModal()">
+                    <a href="#" class="
+                    nav__link--anchor 
+                    link__hover-effect 
+                    link__hover-effect-grey">Contact</a>
+                </li>
+                <li class="nav__link" onclick="toggleContrast()">
+                    <a href="#" class="
+                    nav__link--anchor 
+                    link__hover-effect 
+                    link__hover-effect-grey
+                    "><i class="fa-solid fa-circle-half-stroke"></i></a>
+                </li>
+            </ul>
+        </nav>
+         <!-- End of nav section -->
+         <!-- Start of header section -->
+        <header class="header">
+            <div class="header__content">
+                <h4 class="header__title--first">Nice to meet you,</h4>
+                <h1 class="header__title--second">I'm Matthew.</h1>
+                <br>    
+                <p class="header__para"> I have a passion for <b class="blue
+                    ">frontend development</b> and <b class="blue">UX/UI</b> design. <br> Here's more <b class="blue click link__hover-effect link__hover-effect--blue" onclick="toggleModal()">about me</b>.</p>
+                    <div class="social__links">
+                        <a href="https://www.linkedin.com/in/matthew-mcafee-0bb300202/?originalSubdomain=ca" target="_blank" class="social__link blue link__hover-effect link__hover-effect--blue"><i class="fa-brands fa-linkedin click"></i></a>
+                        <a href="https://github.com/matt-mcafee" target="_blank" class="social__link blue link__hover-effect link__hover-effect--blue"><i class="fa-brands fa-github-square click"></i></a>
+
+
+                    </div>
+            </div>
+        </header>
+        <a href="#"><button  class="contact__btn click" onclick="toggleModal()" ><i class="fa-solid fa-envelope link__hover-effect link__hover-effect--white"></i></button></a>
+        <a href="#projects" class="scroll"><div class="scroll__icon click"></div></a>
+         <!-- Start of contact section -->
+            <div class="modal">
+                <div class="modal__half modal__about">
+                    <h3 class="modal__title">More about me.</h3>
+                    <h4 class="modal__sub--title modal__sub--title-about">
+                        Hi, i'm a 19 year old <b class="blue">frontend</b> developer and <b class="blue">UX/UI</b> designer. I focus on making sites beautiful and easy to use. <br><br> I am currently working on building up my portfolio. 
+                    </h4>
+                    <div class="modal__languages">
+                        <figure class="modal__language">
+                            <img class="modal__language--img" src="assets/html.png" alt="">
+                            <span class="language__name">HTML</span>
+                        </figure>
+                        <figure class="modal__language">
+                            <img class="modal__language--img" src="assets/css.png" alt="">
+                            <span class="language__name">CSS</span>
+                        </figure >
+                        <figure class="modal__language">
+                            <img class="modal__language--img" src="assets/js.png" alt="">
+                            <span class="language__name">Javascript</span>
+                        </figure>
+                        <figure class="modal__language">
+                            <img class="modal__language--img" src="assets/react.png" alt="">
+                            <span class="language__name">React</span>
+                        </figure>
+                        <figure class="modal__language">
+                            <img class="modal__language--img" src="assets/xd.png" alt="">
+                            <span class="language__name">Adobe Xd</span>
+                        </figure>
+                        <figure class="modal__language">
+                            <img class="modal__language--img" src="assets/ps.png" alt="">
+                            <span class="language__name">Adobe Ps</span>
+                        </figure>
+                    </div>
+                </div>
+                <div class="modal__half modal__contact">
+                    <i class="fas fa-times modal__exit click" onclick="toggleModal()"></i>
+                    <h3 class="modal__title modal__title--contact">Let's talk.</h3>
+                    <h4 class="modal__sub--title modal__sub--title-contact">I'm always open to new opportunities.</h4>
+                    <form id="contact__form" onsubmit="contact(event)">
+                        <div class="form__item">
+                            <label class="form__item--label">Name</label>
+                            <input class="input" name="user_name" type="text" ></input>
+                        </div>
+                        <div class="form__item">
+                            <label class="form__item--label">Email</label>
+                            <input class="input" name="user_email" type="email" ></input>
+                        </div>
+                        <div class="form__item">
+                            <label class="form__item--label">Message</label>
+                            <textarea class="input" name="message" type="text" ></textarea>
+                        </div>
+                        <button id="contact__submit" class="form__submit">Submit</button>
+                    </form>
+                    <div class="modal__overlay modal__overlay--loading">
+                        <i class="fas fa-spinner"></i>
+                    </div>
+                    <div class="modal__overlay modal__overlay--success">
+                        Thanks for reaching out! <br><br> I'll be in touch soon.
+                    </div>
+                </div>
+            </div>
+         <!-- End of contact section -->
+    </section>
+     <!-- End of landing section -->
+     <!-- Start of Projects section -->
+    <section id="projects">
+        <div class="container">
+            <div class="row">
+                <h1 class="section__title">
+                    These are my <b class="blue">projects</b>
+                </h1>
+                <ul class="project__list">
+                    <li class="project">
+                        <div class="project__wrapper">
+                            <img src="/assets/coming-soon.jpg" class="project__img">
+                            <div class="project__wrapper--background"></div>
+                            <div class="project__description">
+                                <h3 class="project__description--title">
+                                    Tetris
+                                </h3>
+                                <h4 class="project__description--sub-title">
+                                    Coming Soon
+                                </h4>
+                                <p class="prograph__description--para">
+                                    Currently working on making tetris as a web app.
+                                </p>
+                                <div class="project__description--links">
+                                    <a href="#" class="project__description--link link__hover-effect link__hover-effect--white">
+                                        <i class="fa-brands fa-github-square"></i>
+                                    </a>
+                                    <a href="#" class="project__description--link link__hover-effect link__hover-effect--white">
+                                        <i class="fas fa-link"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+
+                    <br><br><br>
+
+                    <li class="project">
+                        <div class="project__wrapper">
+                            <img src="/assets/coming-soon.jpg" class="project__img">
+                            <div class="project__wrapper--background"></div>
+                            <div class="project__description">
+                                <h3 class="project__description--title">
+                                    Designer Portfolio
+                                </h3>
+                                <h4 class="project__description--sub-title">
+                                    Coming Soon
+                                </h4>
+                                <p class="prograph__description--para">
+                                    Currently working on an a designer's portfolio.
+                                </p>
+                                <div class="project__description--links">
+                                    <a href="#" class="project__description--link">
+                                        <i class="fa-brands fa-github-square link__hover-effect link__hover-effect--white"></i>
+                                    </a>
+                                    <a href="#" class="project__description--link link__hover-effect link__hover-effect--white">
+                                        <i class="fas fa-link"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+     <!-- End of projects section -->
+    <footer>
+        <div class="container">
+            <figure class="footer__content">
+                <img class="footer__logo--img" src="/assets/Logo.png" alt="">
+            </figure>
+            <div class="footer__content footer__social--links">
+                <a href="https://github.com/matt-mcafee" target="_blank" class="social__link link__hover-effect link__hover-effect--white-footer"><i class="fa-brands fa-github-square click white"></i></a>
+                <a href="https://www.linkedin.com/in/matthew-mcafee-0bb300202/?originalSubdomain=ca" target="_blank" class="social__link link__hover-effect link__hover-effect--white-footer"><i class="fa-brands fa-linkedin click white"></i></a>
+                <a href="#" class="social__link click link__hover-effect link__hover-effect--white-footer" onclick="toggleModal()"><i class="fa-solid fa-envelope click white"></i></a>
+            </div>
+            <div class="footer__copyright footer__content">Made by Matthew McAfee</div>
+        </div>
+    </footer>
+</body>
+</html>
